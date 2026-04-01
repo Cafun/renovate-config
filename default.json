@@ -1,0 +1,66 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Standaard Renovate preset voor alle Cafun repos",
+  "extends": [
+    "config:recommended",
+    "docker:enableMajor",
+    ":automergeMinor",
+    ":automergeDigest",
+    ":automergePatch",
+    ":semanticCommits"
+  ],
+  "labels": ["dependencies"],
+  "schedule": ["before 7am on monday"],
+  "timezone": "Europe/Amsterdam",
+  "prHourlyLimit": 5,
+  "prConcurrentLimit": 3,
+  "automergeType": "pr",
+  "platformAutomerge": true,
+  "packageRules": [
+    {
+      "description": "Docker base images: groepeer en automerge minor+patch",
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "automerge": true,
+      "groupName": "docker minor/patch updates"
+    },
+    {
+      "description": "Docker major: aparte PR, handmatig reviewen",
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["major"],
+      "automerge": false
+    },
+    {
+      "description": "Python dependencies: groepeer alle non-major",
+      "matchManagers": ["pip_requirements"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+      "groupName": "python minor/patch updates"
+    },
+    {
+      "description": "Python major: aparte PR",
+      "matchManagers": ["pip_requirements"],
+      "matchUpdateTypes": ["major"],
+      "automerge": false
+    },
+    {
+      "description": "npm dependencies: groepeer non-major",
+      "matchManagers": ["npm"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+      "groupName": "npm minor/patch updates"
+    },
+    {
+      "description": "npm major: aparte PR",
+      "matchManagers": ["npm"],
+      "matchUpdateTypes": ["major"],
+      "automerge": false
+    },
+    {
+      "description": "GitHub Actions: altijd automerge",
+      "matchManagers": ["github-actions"],
+      "automerge": true,
+      "groupName": "github-actions updates"
+    }
+  ]
+}
