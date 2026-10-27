@@ -20,3 +20,4 @@ Voeg dit toe aan `renovate.json` in elke repo:
 - **Major updates:** aparte PR, handmatig reviewen
 - **Groepering:** Docker, Python en npm minor/patch updates worden gegroepeerd per type
 - **Limieten:** max 5 PRs per uur, max 3 gelijktijdig open
+- **upload/download-artifact:** blijft op v3; v4+ weigert Forgejo als GHES (`GHESNotSupportedError`)

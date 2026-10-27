@@ -61,6 +61,12 @@
       "matchManagers": ["github-actions"],
       "automerge": true,
       "groupName": "github-actions updates"
+    },
+    {
+      "description": "upload/download-artifact v4+ weigert Forgejo als GHES (GHESNotSupportedError): blijf op v3",
+      "matchManagers": ["github-actions"],
+      "matchPackageNames": ["/actions-(upload|download)-artifact$/"],
+      "allowedVersions": "<4"
     }
   ]
 }
