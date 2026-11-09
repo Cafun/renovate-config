@@ -49,3 +49,7 @@ Controleer wijzigingen met `bash -n scripts/run.sh` en eerst een gerichte Renova
 dry-run. Bij onderhoud automerge uitschakelen en alleen repositories beperken;
 managers/dependencies uitschakelen kan andere bestaande PR’s automatisch sluiten.
 Na een fix de rebase/retry-checkbox van mislukte PR’s aanvinken.
+
+## Onderhoudsrapporten
+
+- [Lockfile-herverwerking van 2026-11-09](docs/lockfile-retry-2026-11-09.md): 14 PR’s opnieuw verwerkt, 10 lockfiles hersteld en vier peer-conflicten vastgesteld.

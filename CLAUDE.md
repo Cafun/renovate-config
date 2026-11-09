@@ -12,3 +12,9 @@ Gedeelde Forgejo Renovate-preset (`default.json`) en self-hosted runner op claud
 - Gerichte runs beperken tot repositories en automerge uitzetten; managers/dependencies
   uitschakelen kan andere PR’s automatisch sluiten. Nooit volledige vlootruns starten
   alleen om een test uit te voeren.
+
+## Herverwerking
+Als een ongerelateerde branch met `lockfile-error` de repository-run afbreekt,
+mag een gerichte vervolg-run de gewenste pakketten een hogere `prPriority` geven.
+Schakel daarvoor geen managers/dependencies uit. Controleer de nieuwe commit,
+lockfile-diff en actuele CI-status; geen CI-status betekent geen geslaagde test.
