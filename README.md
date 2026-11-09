@@ -53,3 +53,5 @@ Na een fix de rebase/retry-checkbox van mislukte PR’s aanvinken.
 ## Onderhoudsrapporten
 
 - [Lockfile-herverwerking van 2026-11-09](docs/lockfile-retry-2026-11-09.md): 14 PR’s opnieuw verwerkt, 10 lockfiles hersteld en vier peer-conflicten vastgesteld.
+
+- [Dependencydeployments van 2026-11-09](docs/deploy-2026-11-09.md): zes webapps uitgerold, negen PR’s gemerged en Windows-portable voorbereid.
